@@ -1,0 +1,122 @@
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (main)
+$ git fetch origin
+git checkout ofeature/add-quotes
+From https://github.com/cageburns/SEDO_Regular-Exam-1
+ * [new branch]      ofeature/add-quotes -> origin/ofeature/add-quotes
+branch 'ofeature/add-quotes' set up to track 'origin/ofeature/add-quotes'.
+Switched to a new branch 'ofeature/add-quotes'
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (ofeature/add-quotes)
+$ git branch -m feature/add-quotes
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git branch -d ofeature/add-quotes
+error: branch 'ofeature/add-quotes' not found
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git branch -a
+* feature/add-quotes
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/ofeature/add-quotes
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git branch -d ofeature/add-quotes
+error: branch 'ofeature/add-quotes' not found
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git branch | cat -v
+* feature/add-quotes
+  main
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ ^C
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git status
+On branch feature/add-quotes
+Your branch is up to date with 'origin/ofeature/add-quotes'.
+
+nothing to commit, working tree clean
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ ^C
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git push origin --delete ofeature/add-quotes
+To https://github.com/cageburns/SEDO_Regular-Exam-1.git
+ - [deleted]         ofeature/add-quotes
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git branch -D feature/add-quotes
+error: cannot delete branch 'feature/add-quotes' used by worktree at 'C:/Users/Kelly/SEDO_Regular-Exam-1'
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ ^C
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+$ git worktree list
+C:/Users/Kelly/SEDO_Regular-Exam-1  d5ba0bc [feature/add-quotes]
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (feature/add-quotes)
+
+
+
+[detached HEAD d937587] Updated quote punctuation
+ Date: Sun Oct 26 09:41:34 2025 +0200
+
+
+
+
+interactive rebase in progress; onto d5ba0bc
+Last commands done (2 commands done):
+   pick a78454d # updated displayquote func
+   squash 9d31940 # Reverted displayquote func change
+Next command to do (1 remaining command):
+   squash 40c5134 # Updated quote punctuation
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'chore/display-logic' on 'd5ba0bc'.
+  (all conflicts fixed: run "git rebase --continue")
+
+No changes
+You asked to amend the most recent commit, but doing so would make
+it empty. You can repeat your command with --allow-empty, or you can
+remove the commit entirely with "git reset HEAD^".
+Could not apply 9d31940... # Reverted displayquote func change
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (chore/display-logic|REBASE 2/3)
+$ ^C
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (chore/display-logic|REBASE 2/3)
+$ git log
+commit a78454d024ae47d30e61bec4e4199d7f6f176a2e (HEAD)
+Author: cageburns <cageburns@hotmail.com>
+
+
+
+
+
+
+[detached HEAD 8bb0a5f] updated displayquote func
+ Date: Sun Oct 26 10:07:00 2025 +0200
+[detached HEAD a44dddf] updated displayquote func
+ Date: Sun Oct 26 10:07:00 2025 +0200
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/chore/display-logic.
+
+Kelly@Asgard MINGW64 ~/SEDO_Regular-Exam-1 (chore/display-logic)
+$ git push --force-with-lease
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 384 bytes | 384.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/cageburns/SEDO_Regular-Exam-1.git
+   d5ba0bc..a44dddf  chore/display-logic -> chore/display-logic
